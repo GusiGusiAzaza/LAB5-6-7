@@ -33,10 +33,10 @@ namespace LAB5
             }
             finally
             {
-                if (writer != null)
-                    writer.Close();
+                writer?.Close();
             }
         }
+
         public static T ReadFromJsonFile<T>(string filePath) where T : new()
         {
             TextReader reader = null;
@@ -48,8 +48,7 @@ namespace LAB5
             }
             finally
             {
-                if (reader != null)
-                    reader.Close();
+                reader?.Close();
             }
         }
 
@@ -69,12 +68,10 @@ namespace LAB5
         {
             try
             {
-                //const string path = @"C:\main\3SEM\PROGA\LAB5,6,7\LAB5\info.txt";
-                //const string jsonPath = @"C:\main\3SEM\PROGA\LAB5,6,7\LAB5\Egypt.json";
-                //const string infoPath = @"C:\main\3SEM\PROGA\LAB5,6,7\LAB5\Info.txt";
-                const string path = @"Egypt.bin";
-                const string jsonPath = @"Egypt.json";
-                const string infoPath = @"Info.txt";
+                var workingDirectory = Environment.CurrentDirectory;
+                var path = Directory.GetParent(workingDirectory).Parent?.FullName + @"\\Egypt.bin";
+                var jsonPath = Directory.GetParent(workingDirectory).Parent?.FullName + @"\\Egypt.json";
+                var infoPath = Directory.GetParent(workingDirectory).Parent?.FullName + @"\\Info.txt";
                 //CheckPathValidity(path, jsonPath, infoPath);
                 var currentDay = Day.Monday;
                 Console.ForegroundColor = ConsoleColor.White;
@@ -99,13 +96,14 @@ namespace LAB5
                 var coll1 = new Egypt<Egyptian>("Egypt", f1, f2, c1, c2, m1, scr1, sld1, sld2, pr1, pr2, pr3);
                 var coll2 = new Egypt<Egyptian>("2Egypt2", pharaoh, pharaoh2);
                 var coll = coll1 + coll2;
-                
+
                 foreach (Egyptian p in coll)
                 {
                     p.Work();
                     currentDay++;
                     p.Work();
                 }
+
                 f1.SellStuff();
                 c1.SellStuff();
                 m1.SellStuff();
@@ -116,6 +114,7 @@ namespace LAB5
                 m1.BuyResources(1);
                 Console.WriteLine(currentDay);
 
+                coll.DetailPrint();
                 coll.Print();
                 coll.FindWithName("Siese");
 
@@ -130,8 +129,12 @@ namespace LAB5
                 Console.WriteLine(pharaoh is Merchant);
                 Console.WriteLine(pharaoh is FarmerSlave);
                 var merchant = new Merchant("Tom", "Farmer");
-                var craftsmen = merchant as Craftsmen;
-                if (craftsmen == null) Console.WriteLine("Cast error");
+                //var craftsman = merchant as Craftsmen;
+                //if (craftsman == null) 
+                //    Console.WriteLine("Cast error");
+
+                if (merchant is Craftsmen craftsman) //check
+                    Console.WriteLine("Cast error");
 
                 coll.Kill(scr1);
                 coll.FindWithName("Pipi");
@@ -142,12 +145,7 @@ namespace LAB5
                 Console.WriteLine(pharaoh.GetHashCode());
                 Console.WriteLine(pr2.GetHashCode());
 
-                Console.ForegroundColor = ConsoleColor.Yellow;
-                Console.WriteLine((Pharaoh) coll);
-                //Console.WriteLine((FarmerSlave)coll); // cast exception
-                Console.ResetColor();
-
-                coll.InfoFile(infoPath);
+                coll.BriefInfoFile(infoPath);
                 coll.SaveToFile(path);
                 coll2.ReadFromFile(path);
 
@@ -157,6 +155,13 @@ namespace LAB5
                 coll3.Print();
                 coll.FindWithName("GL HF");
                 Debug.Assert(pharaoh is Scribe);
+                //coll.Kill(coll[5]);
+                //coll2 -= coll;
+                //coll2.Print();
+                var coll6 = new Egypt<Egyptian>("Egypt 3.0", jsonPath);
+                coll6.Print();
+
+
                 ////!Exception generator!////
 
                 //coll3[111].Work();
@@ -175,10 +180,7 @@ namespace LAB5
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine($"\nError: {e.Message}");
                 Console.WriteLine("Unfound paths: ");
-                foreach (var pathh in e.Invalidpaths)
-                {
-                    Console.Write($"-->{pathh}\n");
-                }
+                foreach (var pathh in e.Invalidpaths) Console.Write($"-->{pathh}\n");
                 Console.WriteLine($"Method: {e.TargetSite}");
                 Console.WriteLine($"Stack: {e.StackTrace}");
             }
@@ -226,6 +228,7 @@ namespace LAB5
                 Console.WriteLine($"Method: {e.TargetSite}");
                 Console.WriteLine($"Stack: {e.StackTrace}");
             }
+
             finally
             {
                 Console.ForegroundColor = ConsoleColor.Green;
