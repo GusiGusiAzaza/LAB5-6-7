@@ -1,0 +1,39 @@
+///////////////////////////////////////////////////////
+//////////// Created: 21.11.2019 0:46:03 /////////////
+///////////////////////////////////////////////////////
+
+
+Index	Object Type
+
+0	LAB5.Hierarchy.Pharaoh
+1	LAB5.Hierarchy.PriestNoblesOfficials
+2	LAB5.Hierarchy.PriestNoblesOfficials
+3	LAB5.Hierarchy.PriestNoblesOfficials
+4	LAB5.Hierarchy.Soldier
+5	LAB5.Hierarchy.Soldier
+6	LAB5.Hierarchy.Merchant
+7	LAB5.Hierarchy.Craftsmen
+8	LAB5.Hierarchy.Craftsmen
+9	LAB5.Hierarchy.FarmerSlave
+10	LAB5.Hierarchy.FarmerSlave
+
+-------------------------COLLECTION INFORMATION--------------------------
+Owner: Kirill Harevich
+Time of creation: 21.11.2019 0:46:03
+Location: Egypt 2.0
+Number of people: 11
+List of people:
+
+-Pharaoh 'Tutankhamun' (Age: 30, Money: 113199)
+-Priest 'Wennefer' (Age: 43, Money: 2746)
+-Treasurer 'Siese' (Age: 35, Money: 1567)
+-Prophet 'Djedptahiufankh' (Age: 38, Money: 2358)
+-Soldier 'Qen' (Age: 22, Money: 1365)
+-Soldier 'Shoshenq' (Age: 24, Money: 1143)
+-Merchant 'Paser' (Age: 16, Money: 870)
+-Craftsmen 'Nikaure' (Age: 16, Money: 2461)
+-Craftsmen 'Djedi' (Age: 23, Money: 58)
+-Farmer 'Pashedu' (Age: 26, Money: 49)
+-Farmer 'Nykara' (Age: 12, Money: 600)
+------------------------------------------------------------------
+

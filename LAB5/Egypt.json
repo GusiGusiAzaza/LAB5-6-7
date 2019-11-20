@@ -1,0 +1,185 @@
+[
+  {
+    "Territories": 10998,
+    "Rules": 160,
+    "WriteReadSkills": 100,
+    "Duties": [
+      "Making and implementing rules and regulations",
+      "Rule the army",
+      "Protect provinces",
+      "Сollect taxes"
+    ],
+    "Intelligence": 3500,
+    "Name": "Tutankhamun",
+    "Type": "Pharaoh",
+    "Age": 30,
+    "HardcoreLvl": 1000,
+    "AuthorityLvl": 1000,
+    "Money": 113199
+  },
+  {
+    "Rules": 22,
+    "WriteReadSkills": 100,
+    "Duties": [
+      "Making laws",
+      "Keep peace in the society",
+      "Making rituals and ceremonies",
+      "Keep the Gods happy"
+    ],
+    "Intelligence": 650,
+    "Name": "Wennefer",
+    "Type": "Priest",
+    "Age": 43,
+    "HardcoreLvl": 150,
+    "AuthorityLvl": 400,
+    "Money": 2746
+  },
+  {
+    "Rules": 22,
+    "WriteReadSkills": 100,
+    "Duties": [
+      "Making laws",
+      "Keep peace in the society",
+      "Making rituals and ceremonies",
+      "Keep the Gods happy"
+    ],
+    "Intelligence": 650,
+    "Name": "Siese",
+    "Type": "Treasurer",
+    "Age": 35,
+    "HardcoreLvl": 150,
+    "AuthorityLvl": 400,
+    "Money": 1567
+  },
+  {
+    "Rules": 49,
+    "WriteReadSkills": 100,
+    "Duties": [
+      "Making laws",
+      "Keep peace in the society",
+      "Making rituals and ceremonies",
+      "Keep the Gods happy"
+    ],
+    "Intelligence": 650,
+    "Name": "Djedptahiufankh",
+    "Type": "Prophet",
+    "Age": 38,
+    "HardcoreLvl": 150,
+    "AuthorityLvl": 400,
+    "Money": 2358
+  },
+  {
+    "SoldierSkills": 84,
+    "Duties": [
+      "Protect territories",
+      "Kill enemies",
+      "Conquering territories",
+      "Supervise the farmers and slaves"
+    ],
+    "Intelligence": 150,
+    "Name": "Qen",
+    "Type": "Soldier",
+    "Age": 22,
+    "HardcoreLvl": 500,
+    "AuthorityLvl": 260,
+    "Money": 1365
+  },
+  {
+    "SoldierSkills": 101,
+    "Duties": [
+      "Protect territories",
+      "Kill enemies",
+      "Conquering territories",
+      "Supervise the farmers and slaves"
+    ],
+    "Intelligence": 150,
+    "Name": "Shoshenq",
+    "Type": "Soldier",
+    "Age": 24,
+    "HardcoreLvl": 500,
+    "AuthorityLvl": 260,
+    "Money": 1143
+  },
+  {
+    "StuffToSell": 0,
+    "Resources": 1001,
+    "Things": 0,
+    "Duties": [
+      "Exist",
+      "Sell stuff",
+      "Buy stuff",
+      "Making money"
+    ],
+    "Intelligence": 80,
+    "Name": "Paser",
+    "Type": "Merchant",
+    "Age": 16,
+    "HardcoreLvl": 107,
+    "AuthorityLvl": 47,
+    "Money": 870
+  },
+  {
+    "Resources": 765,
+    "Things": 0,
+    "Duties": [
+      "Craft weapons",
+      "Craft tools",
+      "Sell crafted stuff",
+      "Making money"
+    ],
+    "Intelligence": 69,
+    "Name": "Nikaure",
+    "Type": "Craftsmen",
+    "Age": 16,
+    "HardcoreLvl": 104,
+    "AuthorityLvl": 32,
+    "Money": 2461
+  },
+  {
+    "Resources": 836,
+    "Things": 20,
+    "Duties": [
+      "Craft weapons",
+      "Craft tools",
+      "Sell crafted stuff",
+      "Making money"
+    ],
+    "Intelligence": 46,
+    "Name": "Djedi",
+    "Type": "Craftsmen",
+    "Age": 23,
+    "HardcoreLvl": 101,
+    "AuthorityLvl": 16,
+    "Money": 58
+  },
+  {
+    "Grain": 0,
+    "Livestock": 5,
+    "Duties": [
+      "Dig dirt",
+      "Graze animals"
+    ],
+    "Intelligence": 3,
+    "Name": "Pashedu",
+    "Type": "Farmer",
+    "Age": 26,
+    "HardcoreLvl": 255,
+    "AuthorityLvl": 1,
+    "Money": 49
+  },
+  {
+    "Grain": 21,
+    "Livestock": 0,
+    "Duties": [
+      "Dig dirt",
+      "Graze animals"
+    ],
+    "Intelligence": 3,
+    "Name": "Nykara",
+    "Type": "Farmer",
+    "Age": 12,
+    "HardcoreLvl": 269,
+    "AuthorityLvl": 1,
+    "Money": 600
+  }
+]
