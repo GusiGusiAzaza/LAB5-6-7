@@ -28,7 +28,9 @@ namespace LAB5.Hierarchy
             WriteReadSkills += Rand.Next(1, 3);
             Money += Rand.Next(50, 150);
             if (Intelligence < MaxIntelligence)
+            {
                 Intelligence += 40;
+            }
             Console.ForegroundColor = ConsoleColor.Magenta;
             Console.WriteLine(
                 $"\n---{Type} \'{Name}\': Writing big papyrus (Money + {Money - Buf1}({Money}), Rules + {WriteReadSkills - Buf2}({WriteReadSkills}))");

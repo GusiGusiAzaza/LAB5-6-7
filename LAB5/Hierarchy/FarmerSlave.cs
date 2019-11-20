@@ -26,7 +26,9 @@ namespace LAB5.Hierarchy
             Grain += Rand.Next(200);
             Livestock += Rand.Next(5);
             if (Intelligence < MaxIntelligence)
+            {
                 Intelligence += 1;
+            }
             Console.ForegroundColor = ConsoleColor.DarkGreen;
             Console.WriteLine(
                 $"\n---{Type} \'{Name}\': Doing drudgery (Grain + {Grain - Buf1}({Grain}), Livestock + {Livestock - Buf2}({Livestock}))");

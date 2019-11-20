@@ -33,7 +33,9 @@ namespace LAB5.Hierarchy
             Rules += Rand.Next(1, 10);
             Money += Rand.Next(1000, 10000);
             if (Intelligence < MaxIntelligence)
+            {
                 Intelligence += 250;
+            }
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine(
                 $"\n---{Type} \'{Name}\': Ruling the whole Egypt (Territories + {Territories - Buf1}({Territories}), " +

@@ -29,7 +29,9 @@ namespace LAB5.Hierarchy
             Rules += Rand.Next(1, 5);
             Money += Rand.Next(100, 250);
             if (Intelligence < MaxIntelligence)
+            {
                 Intelligence += 125;
+            }
             Console.ForegroundColor = ConsoleColor.Cyan;
             Console.WriteLine(
                 $"\n---{Type} \'{Name}\': Managing territories (Money + {Money - Buf2}({Money}), Rules + {Rules - Buf1}({Rules}))");

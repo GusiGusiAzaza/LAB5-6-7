@@ -51,7 +51,9 @@ namespace LAB5.Hierarchy
             StuffToSell += 5;
             Money -= 100;
             if (Intelligence < MaxIntelligence)
+            {
                 Intelligence += 15;
+            }
             Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine(
                 $"\n---{Type} \'{Name}\': Trading all day long (StuffToSell + 5({StuffToSell}), Money - 100({Money}))");

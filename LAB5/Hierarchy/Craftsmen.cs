@@ -67,7 +67,9 @@ namespace LAB5.Hierarchy
             Resources -= Rand.Next(75, 125);
             Things += Rand.Next(5, 15);
             if (Intelligence < MaxIntelligence)
+            {
                 Intelligence += 10;
+            }
             Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine(
                 $"\n---{Type} \'{Name}\': Crafting useful stuff (Resources - {Buf1 - Resources}({Resources}), " +

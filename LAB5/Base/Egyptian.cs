@@ -7,15 +7,16 @@ namespace LAB5.Base
     [Serializable]
     internal class Egyptian : IHierarchy
     {
-        public const int MaxIntelligence = 5000;
-        protected static readonly Random Rand = new Random((int) DateTime.Now.Ticks);
-        private int _age;
-        private int _hardLvl;
         private const int StringPropertyMinLength = 2;
         private const int StringPropertyMaxLength = 30;
         private const int MinAge = 0;
         private const int MaxAge = 101;
         private const int MaxHardcoreLvl = 10000;
+        public const int MaxIntelligence = 5000;
+        
+        protected static readonly Random Rand = new Random((int) DateTime.Now.Ticks);
+        private int _age;
+        private int _hardLvl;
         private string _name;
         private string _type;
         private protected int Buf1;
@@ -36,7 +37,9 @@ namespace LAB5.Base
             set
             {
                 if (value.Length < StringPropertyMinLength || value.Length > StringPropertyMaxLength)
+                {
                     throw new PersonArgumentException("Unacceptable Name value for", value);
+                }
                 _name = value;
             }
         }
@@ -47,7 +50,9 @@ namespace LAB5.Base
             set
             {
                 if (value.Length < StringPropertyMinLength || value.Length > StringPropertyMaxLength)
+                {
                     throw new PersonArgumentException($"Unacceptable Type value for {Name}", value);
+                }
                 _type = value;
             }
         }
@@ -58,7 +63,9 @@ namespace LAB5.Base
             set
             {
                 if (value < MinAge || value > MaxAge)
+                {
                     throw new PersonArgumentException($"Unacceptable Age value for {Name}", value);
+                }
                 _age = value;
             }
         }
@@ -71,13 +78,16 @@ namespace LAB5.Base
                 if (value > MaxHardcoreLvl)
                 {
                     Console.WriteLine("You are hardcore");
+                    
                     return;
                 }
 
                 if (value < 0)
+                {
+                    throw new PersonArgumentException($"Unacceptable Hardcore lvl value for {Name}", value);
                     //Console.WriteLine("Hardcore with minus? Nonono");
                     //return;
-                    throw new PersonArgumentException($"Unacceptable Hardcore lvl value for {Name}", value);
+                }
 
                 _hardLvl = value;
             }
@@ -109,7 +119,7 @@ namespace LAB5.Base
 
         public override string ToString()
         {
-            return $"------------------------------------\n" +
+            return "------------------------------------\n" +
                    $"{Name} is {Age} y/o. " +
                 $"Properties:\nType: {Type}\n" +
                 $"Duties: {GetDuties()}\n" +

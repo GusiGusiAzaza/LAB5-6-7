@@ -1,5 +1,5 @@
 ///////////////////////////////////////////////////////
-//////////// Created: 16.11.2019 10:32:40 /////////////
+//////////// Created: 21.11.2019 0:46:03 /////////////
 ///////////////////////////////////////////////////////
 
 
@@ -19,21 +19,21 @@ Index	Object Type
 
 -------------------------COLLECTION INFORMATION--------------------------
 Owner: Kirill Harevich
-Time of creation: 16.11.2019 10:32:40
+Time of creation: 21.11.2019 0:46:03
 Location: Egypt 2.0
 Number of people: 11
 List of people:
 
--Pharaoh 'Tutankhamun' (Age: 23, Money: 113602)
--Priest 'Wennefer' (Age: 16, Money: 2160)
--Treasurer 'Siese' (Age: 11, Money: 2131)
--Prophet 'Djedptahiufankh' (Age: 22, Money: 1933)
--Soldier 'Qen' (Age: 30, Money: 1114)
--Soldier 'Shoshenq' (Age: 22, Money: 1157)
--Merchant 'Paser' (Age: 10, Money: 391)
--Craftsmen 'Djedi' (Age: 14, Money: 15)
--Craftsmen 'Nikaure' (Age: 23, Money: 2539)
--Farmer 'Pashedu' (Age: 34, Money: 193)
--Farmer 'Nykara' (Age: 27, Money: 800)
+-Pharaoh 'Tutankhamun' (Age: 30, Money: 113199)
+-Priest 'Wennefer' (Age: 43, Money: 2746)
+-Treasurer 'Siese' (Age: 35, Money: 1567)
+-Prophet 'Djedptahiufankh' (Age: 38, Money: 2358)
+-Soldier 'Qen' (Age: 22, Money: 1365)
+-Soldier 'Shoshenq' (Age: 24, Money: 1143)
+-Merchant 'Paser' (Age: 16, Money: 870)
+-Craftsmen 'Nikaure' (Age: 16, Money: 2461)
+-Craftsmen 'Djedi' (Age: 23, Money: 58)
+-Farmer 'Pashedu' (Age: 26, Money: 49)
+-Farmer 'Nykara' (Age: 12, Money: 600)
 ------------------------------------------------------------------
 

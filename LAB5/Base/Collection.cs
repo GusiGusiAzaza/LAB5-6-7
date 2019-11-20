@@ -12,7 +12,7 @@ namespace LAB5.Base
 {
     internal sealed class Egypt<T> : IEnumerator, IEnumerable where T : IHierarchy
     {
-        private readonly CollectionCreationInfo _time;
+        private readonly CreationInfo _time;
         private List<T> _people = new List<T>();
 
         private bool _isSorted;
@@ -23,30 +23,37 @@ namespace LAB5.Base
         //private static Egypt<T> _instance;
         //private Egypt(string name, params T[] list)
         //{
-        //    _time = new CollectionCreationInfo(DateTime.Now);
+        //    _time = new CreationInfo(DateTime.Now);
         //    Name = name;
         //    foreach (T person in list)
+        //    {
         //        Add(person);
+        //    }
         //}
         //public static Egypt<T> GetInstance(string name, params T[] list)
         //{
         //    if (_instance == null)
+        //    {
         //        _instance = new Egypt<T>(name, list);
+        //    }
+
         //    return _instance;
         //}
         //// Singleton end
 
         public Egypt(string name, params T[] list)
         {
-            _time = new CollectionCreationInfo(DateTime.Now);
+            _time = new CreationInfo(DateTime.Now);
             Name = name;
             foreach (var person in list)
+            {
                 Add(person);
+            }
         }
 
         public Egypt(string name, string path)
         {
-            _time = new CollectionCreationInfo(DateTime.Now);
+            _time = new CreationInfo(DateTime.Now);
             Name = name;
             Simulation.CheckPathValidity(path);
             JsonReadFromFile(path);
@@ -57,7 +64,10 @@ namespace LAB5.Base
             get
             {
                 if (index <= Length && index >= 0)
+                {
                     return _people[index];
+                }
+                
                 throw new EgyptIndexOutOfRangeException($"Incorrect index({index})(collection: '{Name}')");
                 //Console.WriteLine($"Incorrect index({index})(collection: '{Name}')");
                 //return default;
@@ -77,6 +87,7 @@ namespace LAB5.Base
             if (_position >= _people.Count - 1)
             {
                 ((IEnumerator) this).Reset();
+                
                 return false;
             }
             _position++;
@@ -98,14 +109,16 @@ namespace LAB5.Base
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine($"\nPerson \"{person.Name}\" is already in(collection: '{Name}')");
                 Console.ResetColor();
+                
                 return;
             }
 
-            var results = new List<ValidationResult>();
-            var context = new ValidationContext(person);
-            if (!Validator.TryValidateObject(person, context, results, true))
+            var validationResults = new List<ValidationResult>();
+            var validationContext = new ValidationContext(person);
+            const bool validateAllProperties = true;
+            if (!Validator.TryValidateObject(person, validationContext, validationResults, validateAllProperties))
             {
-                foreach (var error in results)
+                foreach (var error in validationResults)
                 {
                     Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine(error.ErrorMessage);
@@ -180,7 +193,7 @@ namespace LAB5.Base
 
         public T FirstOrDefault(Predicate<T> pred)
         {
-                return _people.Find(pred);
+            return _people.Find(pred);
         }
 
         public List<T> FindAll(Predicate<T> pred)
@@ -204,7 +217,11 @@ namespace LAB5.Base
             Console.WriteLine($"Location: {Name}");
             Console.WriteLine($"Number of people: {_people.Count}");
             Console.WriteLine("List of people:\n\n");
-            if (!_isSorted) SortByAuthority();
+            if (!_isSorted)
+            {
+                SortByAuthority();
+            }
+            
             foreach (var p in _people)
             {
                 Console.WriteLine($"-{p.Type} \'{p.Name}\' (Age: {p.Age}, Money: {p.Money})");
@@ -225,7 +242,11 @@ namespace LAB5.Base
             Console.WriteLine($"Location: {Name}");
             Console.WriteLine($"Number of people: {_people.Count}");
             Console.WriteLine($"List of people:\n");
-            if (!_isSorted) SortByAuthority();
+            if (!_isSorted)
+            {
+                SortByAuthority();
+            }
+
             foreach (var p in _people)
             {
                 Console.WriteLine(p);
@@ -244,7 +265,10 @@ namespace LAB5.Base
                          $"//////////// Created: {File.GetLastWriteTime(path)} /////////////\n" +
                          "///////////////////////////////////////////////////////\n\n");
             sw.WriteLine("Index\tObject Type\n");
-            for (var i = 0; i < Length; i++) sw.WriteLine($"{i}\t{this[i].GetType()}");
+            for (var i = 0; i < Length; i++)
+            {
+                sw.WriteLine($"{i}\t{this[i].GetType()}");
+            }
 
             sw.WriteLine($"{this}");
         }
@@ -289,7 +313,11 @@ namespace LAB5.Base
             str += $"\nLocation: {Name}";
             str += $"\nNumber of people: {_people.Count}";
             str += $"\nList of people:\n";
-            if (!_isSorted) SortByAuthority();
+            if (!_isSorted)
+            {
+                SortByAuthority();
+            }
+            
             foreach (var p in _people)
             {
                 str += $"\n-{p.Type} \'{p.Name}\' (Age: {p.Age}, Money: {p.Money})";
@@ -305,7 +333,9 @@ namespace LAB5.Base
             foreach (T person in coll2)
             {
                 if (!united.IsExist(person.Name))
+                {
                     united.Add(person);
+                }
             }
 
             return united;
@@ -323,12 +353,12 @@ namespace LAB5.Base
             return ununited;
         }
 
-        private struct CollectionCreationInfo
+        private struct CreationInfo
         {
             public readonly DateTime Time;
             public readonly string Owner;
 
-            internal CollectionCreationInfo(DateTime time)
+            internal CreationInfo(DateTime time)
             {
                 Time = time;
                 Owner = "Kirill Harevich";

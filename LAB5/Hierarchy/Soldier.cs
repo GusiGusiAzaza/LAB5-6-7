@@ -24,7 +24,9 @@ namespace LAB5.Hierarchy
         public override void Work()
         {
             if (Intelligence < MaxIntelligence)
+            {
                 Intelligence += 25;
+            }
             Buf1 = Money;
             Buf2 = SoldierSkills;
             var buf3 = AuthorityLvl;
